@@ -5,9 +5,9 @@ CC = gcc
 all:
 	$(NASM) $(NASMFLAGS) $(NAME) -o Colleen.o
 	$(CC) Colleen.o -o a.out
-	./a.out > output.s
-	diff $(NAME) output.s
+	./a.out > tmp_Colleen
+	diff $(NAME) tmp_Colleen
 clean:
-	rm -f Colleen.o output.s a.out 
+	rm -f Colleen.o tmp_Colleen a.out 
 re: clean all
 .PHONY: all clean re

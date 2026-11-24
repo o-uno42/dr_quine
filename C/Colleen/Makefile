@@ -3,9 +3,9 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 all:
 	$(CC) $(CFLAGS) $(NAME) -o a.out
-	./a.out > output.c
-	diff $(NAME) output.c
+	./a.out > tmp_Colleen
+	diff $(NAME) tmp_Colleen
 clean:
-	rm -f output.c a.out
+	rm -f tmp_Colleen a.out
 re: clean all
 .PHONY: all clean re
